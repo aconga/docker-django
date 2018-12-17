@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                echo '''
-                        build
+                sh '''
+                        ./jenkins/build.sh
                         '''
             }
         }
@@ -17,7 +17,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo '''
-                        deploy
+                        ./jenkins/deploy.sh
                         '''
             }
         }
