@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                echo '''
+                sh '''
+                        chmod +x /jenkins/build.sh
                         ./jenkins/build.sh
                         '''
             }
