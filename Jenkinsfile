@@ -5,7 +5,6 @@ pipeline {
             steps {
                 sh '''
                         chmod +x ./jenkins/build.sh
-                        chmod +x /root/jenkins/jenkins_home/workspace/docker-django
                         ./jenkins/build.sh
                         '''
             }
@@ -20,7 +19,6 @@ pipeline {
             steps {
                 sh '''
                         chmod +x ./jenkins/deploy.sh
-                        chmod +x /root/jenkins/jenkins_home/workspace/docker-django
                         ./jenkins/deploy.sh
                         '''
             }
