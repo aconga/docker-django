@@ -17,7 +17,8 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo '''
+                sh '''
+                        chmod +x ./jenkins/deploy.sh
                         ./jenkins/deploy.sh
                         '''
             }
