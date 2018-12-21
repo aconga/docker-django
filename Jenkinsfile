@@ -1,9 +1,9 @@
 pipeline {
-    agent { dockerfile true }
+    agent any
     stages {
         stage('Build') { 
             steps {
-                sh 'docker ps'
+                sh 'docker compose build'
             }
         }
         stage('Test') {
