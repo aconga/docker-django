@@ -14,10 +14,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh '''
-                        chmod +x ./jenkins/deploy.sh
-                        ./jenkins/deploy.sh
-                        '''
+                sh 'docker compose up -d'
             }
         }
     }
