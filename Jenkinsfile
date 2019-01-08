@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'docker-compose -f docker-compose.yml build'
+                echo 'Building'
             }
         }
         stage('Test') {
@@ -14,7 +14,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'docker-compose up'
+                sh 'Deploying'
             }
         }
     }
