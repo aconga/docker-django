@@ -1,21 +1,4 @@
-pipeline {
-    agent production
-    stages {
-        stage('Build') { 
-            steps {
-                echo 'Building'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying'
-            }
-        }
-    }
+node('production') {
+    echo 'hello world'
+    sh 'ls -a'
 }
