@@ -23,17 +23,27 @@ pipeline {
 
 
 node('test') {
+    pipeline {
     agent any
-    stage('Build') {
-        echo 'Building'
-    }
-    stage('Test') {
-        echo 'Testing..'
+    stages {
+        stage('Build') { 
+            steps {
+                echo 'Building'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
         }
 
-    stage('Deploy') {
-        echo 'Deploying'
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
+            }
         }
+    }
+}
 }
 
 
