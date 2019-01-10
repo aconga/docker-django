@@ -1,5 +1,27 @@
-node('test') {
+pipeline {
     agent any
+    stages {
+        stage('Build') { 
+            steps {
+                echo 'Building'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
+            }
+        }
+    }
+}
+
+
+node('test') {
     stage('Build') {
         echo 'Building'
     }
@@ -13,9 +35,7 @@ node('test') {
 }
 
 
-
 node('production') {
-    agent any
     stage('Build') {
         echo 'Building'
     }
