@@ -23,7 +23,7 @@ pipeline {
 
 
 node('test') {
-    
+    agent any
     stage('Build') {
         echo 'Building'
     }
@@ -38,7 +38,7 @@ node('test') {
 
 
 node('production') {
-    
+    agent any
     stage('Build') {
         echo 'Building'
     }
