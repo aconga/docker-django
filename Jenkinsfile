@@ -22,6 +22,9 @@ pipeline {
 
 
 node('test') {
+    stage('Poll') {
+        checkout scm
+    }
     stage('Build') {
         echo 'Building'
     }
@@ -36,6 +39,9 @@ node('test') {
 
 
 node('production') {
+    stage('Poll') {
+        checkout scm
+    }
     stage('Build') {
         echo 'Building'
     }
