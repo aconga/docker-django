@@ -1,50 +1,17 @@
-
-pipeline {
-    agent any
-    stages {
-        stage('Build') { 
-            steps {
-                echo 'Building'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying'
-            }
-        }
-    }
-}
-
-
 node('test') {
-    pipeline {
     agent any
-    stages {
-        stage('Build') { 
-            steps {
-                echo 'Building'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
+    stage('Build') {
+        echo 'Building'
+    }
+    stage('Test') {
+        echo 'Testing..'
         }
 
-        stage('Deploy') {
-            steps {
-                echo 'Deploying'
-            }
+    stage('Deploy') {
+        echo 'Deploying'
         }
-    }
 }
-}
+
 
 
 node('production') {
