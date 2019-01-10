@@ -20,3 +20,33 @@ pipeline {
         }
     }
 }
+
+
+node('test') {
+    
+    stage('Build') {
+        echo 'Building'
+    }
+    stage('Test') {
+        echo 'Testing..'
+        }
+
+    stage('Deploy') {
+        echo 'Deploying'
+        }
+}
+
+
+node('production') {
+    
+    stage('Build') {
+        echo 'Building'
+    }
+    stage('Test') {
+        echo 'Testing..'
+        }
+
+    stage('Deploy') {
+        echo 'Deploying'
+        }
+}
